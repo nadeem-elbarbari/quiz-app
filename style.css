@@ -1,0 +1,242 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+body {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: darkgray;
+}
+
+.container {
+	position: relative;
+	max-width: 600px;
+	width: 100%;
+	padding: 40px;
+	background-color: #0d0e29;
+	color: aliceblue;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	overflow: hidden;
+	border-radius: 15px;
+}
+
+.heading {
+	text-align: center;
+	margin-bottom: 50px;
+	font-size: 2.5rem;
+}
+
+label {
+	display: block;
+	margin-bottom: 10px;
+	font-size: 1.125rem;
+	text-transform: capitalize;
+}
+
+select {
+	width: 100%;
+	padding: 10px;
+	border-radius: 5px;
+	border: none;
+	outline: none;
+	color: #0d0e29;
+	font-size: 0.875rem;
+	margin-bottom: 20px;
+}
+
+select option{  height: 10px; overflow: hidden; font-size: 18px;}
+
+.btn {
+	width: 100%;
+	padding: 15px 10px;
+	border-radius: 5px;
+	border: none;
+	outline: none;
+	color: #fff;
+	font-size: 1.125rem;
+	font-weight: 600;
+	cursor: pointer;
+	margin-top: 10px;
+	background-color: #5160ea;
+	transition: all 0.3s ease;
+	/* text-transform: uppercase; */
+}
+
+.btn:hover {
+	background-color: #5160ca;
+	letter-spacing: 1px;
+}
+
+.btn:disabled {
+	cursor: not-allowed;
+	background-color: #a1a1a1;
+    letter-spacing: normal;
+}
+
+.hidden {
+	display: none;
+}
+
+.timer {
+	/* background-color: #48a0a3; */
+	width: 100%;
+	height: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: -30px;
+}
+
+.timer .progress {
+	background-color: transparent;
+	position: relative;
+	width: 100%;
+	height: 40px;
+	border-radius: 50px;
+	overflow: hidden;
+	border: 3px solid #4e4e4e;
+}
+
+.timer .progress .progress-bar {
+	width: 100%;
+	height: 100%;
+	border-radius: 50px;
+	background: linear-gradient(to right, #5160ea, #78b7f1);
+	overflow: hidden;
+	transition: 1s linear;
+}
+
+.timer .progress .progress-text {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 1.125rem;
+	font-weight: 600;
+}
+
+.question-wrapper {
+	width: 100%;
+}
+
+.question-wrapper .number {
+	font-size: 1.5625rem;
+	font-weight: 600;
+	margin-bottom: 20px;
+}
+
+.question-wrapper .number .total {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #a3a3a3;
+}
+
+.question-wrapper .question {
+    /* background-color: #fff; */
+    font-size: 1.125rem;
+    margin-bottom: -20px;
+    font-weight: 600;
+    color: #ffd000;
+    /* text-transform: capitalize; */
+}
+
+.question-wrapper .answer-wrapper .answer {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.125rem;
+    width: 100%;
+    height: 60px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 3px solid #4e4e4e;
+    margin-bottom: 20px;
+    cursor: pointer;
+    text-transform: capitalize;
+    transition: background-color 0.2s linear;
+}
+
+.question-wrapper .answer-wrapper .checkbox {
+    width: 25px;
+    height: 25px;
+    font-size: 12px;
+    border-radius: 50%;
+    border: 3px solid #4e4e4e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s linear;
+}
+
+.question-wrapper .answer-wrapper .checkbox .icon {
+    opacity: 0;
+}
+
+.question-wrapper .answer-wrapper .answer:hover .checkbox,
+.question-wrapper .answer-wrapper .answer.selected .checkbox {
+    background-color: #5160ea;
+    border-color: #5160ea;
+}
+
+.question-wrapper .answer-wrapper .answer.selected .checkbox .icon {
+    opacity: 1;
+}
+
+.correct {
+    /* background-color: #0c9; */
+    border-color: #0c9 !important;
+    color: #fff;
+}
+
+.question-wrapper .answer-wrapper .answer.wrong {
+    /* background-color: #a00; */
+    border-color: #a00;
+    color: #fff;
+}
+
+.question-wrapper, .answer-wrapper {
+    margin-top: 50px;
+}
+
+
+
+
+.end-screen{
+    text-align: center;
+}
+
+.end-screen h1 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-bottom: 60px;
+}
+
+.end-screen .score {
+    font-size: 1.5625rem;
+    font-weight: 500;
+    margin-bottom: 60px;
+}
+
+.end-screen .score-text {
+    color: #a2aace;
+    font-size: 1.125rem;
+    font-weight: 400;
+    margin-bottom: 60px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        max-width: 100%;
+		height: 100%;
+        min-height: 100vh;
+        border-radius: 0;
+    }
+}
